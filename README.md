@@ -4,11 +4,18 @@
 
 ---
 
+## 🖼️ Demo & Workflow Visualization
+
+| n8n Automation (Backend) | Softr Investor Dashboard (Frontend) |
+| :---: | :---: |
+| <img src="https://github.com/Muneeb20019/Real-Estate-Dashboard-n8n-Softr/raw/main/real%20estate%20.png" width="400" /> | <img src="https://github.com/Muneeb20019/Real-Estate-Dashboard-n8n-Softr/raw/main/Softr%20n8n%20Dashboard.png" width="400" /> |
+
+*Left: The n8n orchestration pipeline. Right: The real-time color-coded dashboard.*
+
+---
+
 ## 🚀 Project Overview
 An enterprise-grade automation engine designed for Airbnb investors to eliminate manual property screening. This tool ingests raw property listing data via **Gmail triggers**, utilizes **LLMs** to perform financial feasibility analysis, and instantly publishes "Buy" or "Pass" verdicts to a live, color-coded dashboard.
-
-## 📸 System Architecture (Under the Hood)
-![n8n Workflow]([INSERT_LINK_TO_YOUR_N8N_SCREENSHOT_HERE])
 
 ## 🎯 The Problem & The AI Solution
 ### The Problem
@@ -16,7 +23,7 @@ Airbnb investors waste hours reading messy listing descriptions. Identifying key
 
 ### The Solution
 This system acts as a **24/7 Virtual Analyst**:
-- **Automated Ingestion:** Captures data via Webhook (API) or Gmail triggers.
+- **Automated Ingestion:** Captures data via Gmail triggers scanning for property alerts.
 - **Financial Intelligence:** Calculates total investment (`Price + Reno Estimate`) against a $400k ceiling.
 - **Regulatory Check:** Scans text for legal keywords to ensure Short-Term Rental (Airbnb) compliance.
 - **Real-Time UI:** Streams analyzed data into a Softr-powered Deal Board for immediate viewing.
@@ -34,7 +41,7 @@ This system acts as a **24/7 Virtual Analyst**:
 ## 🚀 Technical Stack
 | Layer | Technology |
 | :--- | :--- |
-| **Automation** | n8n Tool |
+| **Automation** | n8n Orchestration |
 | **AI Brain** | OpenRouter (DeepSeek-V3 / GPT-4o-mini) |
 | **Frontend** | Softr |
 | **Database** | Airtable |
@@ -64,9 +71,7 @@ Create a new Airtable Base named `Real Estate Deal Engine` and a table named `De
 3.  **Activate:** Flip the toggle in the top-right corner to **Active**. The system is now live.
 
 ### 3. Trigger the Analysis
-It can trigger through Gmail.
-    
-*   **Via Gmail:** Send an email containing a property listing to your connected Gmail account.
+- **Via Gmail:** Simply send an email containing a property listing or description to your connected Gmail account. n8n will detect the new email and begin processing instantly.
 
 ### 4. Monitor the Dashboard
 1.  Open your **Softr Live Dashboard**.
@@ -81,3 +86,6 @@ It can trigger through Gmail.
 - **GitHub:** [@Muneeb20019](https://github.com/Muneeb20019)
 - **LinkedIn:** [Muneeb Ali Khan](https://www.linkedin.com/in/muneeb-ali-khan-2a1675365)
 - **Project Link:** [Airbnb Deal Board](https://sona93303.softr.app)
+
+---
+*Built as a functional proof-of-concept for the AI & Automation Engineering Internship.*
