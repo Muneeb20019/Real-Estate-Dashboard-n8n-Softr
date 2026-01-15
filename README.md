@@ -1,48 +1,83 @@
-# 🏠 AI-Powered Real Estate Deal Engine (Airbnb Sniper)
+# 🏠 AI-Powered Real Estate Dashboard
 
 **[🌐 Live Dashboard](https://sona93303.softr.app) | [🎥 Video Demo](https://www.loom.com/share/36e9b83e3a004a40be72f37fadc70779)**
 
-## 🖼️ Demo
+---
 
-* ([![AI Real Estate Engine](https://cdn.loom.com/sessions/thumbnails/36e9b83e3a004a40be72f37fadc70779-with-play.gif)](https://www.loom.com/share/36e9b83e3a004a40be72f37fadc70779))
-[
-](https://www.loom.com/share/36e9b83e3a004a40be72f37fadc70779)---
-
-## 🎯 Project Overview
-An enterprise-grade automation engine designed for Airbnb investors to eliminate manual property screening. This tool ingests raw property listing data via **Gmail triggers** or **Webhooks**, utilizes **LLMs** to perform financial feasibility analysis, and instantly publishes verdicts to a live dashboard.
+## 🚀 Project Overview
+An enterprise-grade automation engine designed for Airbnb investors to eliminate manual property screening. This tool ingests raw property listing data via **Gmail triggers**, utilizes **LLMs** to perform financial feasibility analysis, and instantly publishes "Buy" or "Pass" verdicts to a live, color-coded dashboard.
 
 ## 📸 System Architecture (Under the Hood)
-![n8n Workflow Graph](REPLACE_WITH_YOUR_N8N_SCREENSHOT_LINK)
+![n8n Workflow]([INSERT_LINK_TO_YOUR_N8N_SCREENSHOT_HERE])
+
+## 🎯 The Problem & The AI Solution
+### The Problem
+Airbnb investors waste hours reading messy listing descriptions. Identifying key "deal breakers"—like high renovation costs or HOA rental restrictions—requires intense manual focus and is prone to human error.
+
+### The Solution
+This system acts as a **24/7 Virtual Analyst**:
+- **Automated Ingestion:** Captures data via Webhook (API) or Gmail triggers.
+- **Financial Intelligence:** Calculates total investment (`Price + Reno Estimate`) against a $400k ceiling.
+- **Regulatory Check:** Scans text for legal keywords to ensure Short-Term Rental (Airbnb) compliance.
+- **Real-Time UI:** Streams analyzed data into a Softr-powered Deal Board for immediate viewing.
 
 ## ✨ Key Features
-- **🧠 Intelligence Engine:** Powered by **DeepSeek-V3 via OpenRouter** with a **Structured Output Parser** for 100% valid JSON extraction.
+- **🧠 Advanced AI Logic:** Uses **OpenRouter (DeepSeek/GPT-4o)** with a **Structured Output Parser** to coerce raw text into valid JSON.
 - **⚖️ Automated Verdict Logic:** 
     - **🟢 BUY:** Total cost < $400k AND Airbnb is legal.
     - **🔴 PASS:** Over budget OR rental restrictions found.
-- **✉️ Gmail Automation:** Scans incoming property alerts automatically to identify deals before they hit the mainstream.
-- **📊 Relational Storage:** Utilizes **Airtable** for centralized database tracking and persistence.
+    - **🟡 HUMAN REVIEW:** Triggered for missing price data or ambiguous text.
+- **✉️ Gmail Integration:** Scans incoming property alerts automatically to identify deals before they hit the mainstream.
+- **📊 Relational Storage:** Utilizes **Airtable** as a centralized database for deal tracking and persistence.
+- **📱 Responsive Frontend:** A public **Softr** dashboard with color-coded cards and search/filter functionality.
 
 ## 🚀 Technical Stack
 | Layer | Technology |
 | :--- | :--- |
-| **Automation** | n8n Orchestration |
-| **AI / LLM** | OpenRouter (DeepSeek-V3 / GPT-4o-mini) |
+| **Automation** | n8n Tool |
+| **AI Brain** | OpenRouter (DeepSeek-V3 / GPT-4o-mini) |
 | **Frontend** | Softr |
 | **Database** | Airtable |
+| **Language** | JavaScript (for n8n Logic) |
+| **Triggers** | Gmail IMAP |
 
-## ⚙️ Advanced Implementation Details
-I implemented a **Structured Output Parser** node in n8n. Unlike standard AI prompts that return conversational text, this implementation forces the LLM to adhere to a strict JSON schema, ensuring data integrity for the Airtable database.
+---
+
+## 🛠️ How to Use & Setup
+
+### 1. Database Setup (Airtable)
+Create a new Airtable Base named `Real Estate Deal Engine` and a table named `Deals`. Define the following columns with precise data types:
+*   `Property Title`: `Single line text`
+*   `Asking Price`: `Currency`
+*   `Renovation Estimate`: `Currency`
+*   `Is Airbnb Legal?`: `Checkbox`
+*   `AI Verdict`: `Single Select` (Options: `🟢 BUY`, `🔴 PASS`, `🟡 HUMAN REVIEW`)
+*   `AI Summary`: `Long text`
+*   `Listing Text`: `Long text`
+
+### 2. Automation Setup (n8n)
+1.  **Import Workflow:** Download the `workflow.json` from this repo and import it into your n8n instance.
+2.  **Configure Credentials:**
+    *   Connect your **OpenRouter/OpenAI** API key in the AI Agent node.
+    *   Connect your **Airtable Personal Access Token** in the Airtable node.
+    *   Authenticate your **Gmail** account in the Gmail Trigger node.
+3.  **Activate:** Flip the toggle in the top-right corner to **Active**. The system is now live.
+
+### 3. Trigger the Analysis
+It can trigger through Gmail.
+    
+*   **Via Gmail:** Send an email containing a property listing to your connected Gmail account.
+
+### 4. Monitor the Dashboard
+1.  Open your **Softr Live Dashboard**.
+2.  The AI will process the listing in < 30 seconds.
+3.  New deals will appear automatically at the top of the board with their respective **AI Verdict** tags and financial summaries.
+
+---
 
 ## ✍️ Author
 **Muneeb Ali Khan**
 
 - **GitHub:** [@Muneeb20019](https://github.com/Muneeb20019)
 - **LinkedIn:** [Muneeb Ali Khan](https://www.linkedin.com/in/muneeb-ali-khan-2a1675365)
-
----
-*Built for the AI & Automation Engineering Internship Challenge.*
-
-
-
-
-* (https://www.loom.com/share/941af541355f459a8f19f6c3e4cda597?sid=1307c447-a23c-45d0-88b9-dba260b51072)
+- **Project Link:** [Airbnb Deal Board](https://sona93303.softr.app)
