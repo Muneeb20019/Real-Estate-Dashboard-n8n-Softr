@@ -1,6 +1,6 @@
 # 🏠 AI-Powered Real Estate Dashboard
 
-**[🌐 Live Dashboard](https://sona93303.softr.app) | [🎥 Video Demo](https://www.loom.com/share/36e9b83e3a004a40be72f37fadc70779)**
+**[🌐 Live Dashboard](https://sona93303.preview.softr.app/?autoUser=true&show-toolbar=true) | [🎥 Video Demo](https://www.loom.com/share/36e9b83e3a004a40be72f37fadc70779)**
 
 ---
 
@@ -85,6 +85,5 @@ Create a new Airtable Base named `Real Estate Deal Engine` and a table named `De
 
 - **GitHub:** [@Muneeb20019](https://github.com/Muneeb20019)
 - **LinkedIn:** [Muneeb Ali Khan](https://www.linkedin.com/in/muneeb-ali-khan-2a1675365)
-- **Project Link:** [Airbnb Deal Board](https://sona93303.softr.app)
-
+- **Project Link:** [Airbnb Deal Board](https://sona93303.preview.softr.app/?autoUser=true&show-toolbar=true)
 
