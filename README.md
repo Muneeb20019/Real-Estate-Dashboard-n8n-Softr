@@ -87,5 +87,4 @@ Create a new Airtable Base named `Real Estate Deal Engine` and a table named `De
 - **LinkedIn:** [Muneeb Ali Khan](https://www.linkedin.com/in/muneeb-ali-khan-2a1675365)
 - **Project Link:** [Airbnb Deal Board](https://sona93303.softr.app)
 
----
-*Built as a functional proof-of-concept for the AI & Automation Engineering Internship.*
+
